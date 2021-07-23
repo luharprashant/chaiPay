@@ -3,6 +3,11 @@
 This go app is build using gin framework and uses Stripes charge api
 
 
+## Step to run:
+1. Run the `docker-compose up -d` command from the root of directory (It will setup and install mongodb & mongo-express on your localhost)
+2. From root run `go run main.go`
+
+
 ## Below is the list of API with specification
 
 1. **List Charges API**
