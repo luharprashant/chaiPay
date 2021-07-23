@@ -5,12 +5,13 @@ This go app is build using gin framework and uses Stripes charge api
 
 ## Below is the list of API with specification
 
-1. **GET Charges API**
+1. **List Charges API**
 
   Returns a list of charges stored in the DB
 
-   >URL: *localhost:50051/chaipay/api/v1/get_charges
-   >RESPONSE:
+   > URL: localhost:50051/chaipay/api/v1/get_charges
+   > METHOD: GET
+   > RESPONSE:
    ```
         {
           "data": [
@@ -43,20 +44,21 @@ This go app is build using gin framework and uses Stripes charge api
         }
   ```
 
-2. **POST Charges API**
+2. **Create Charges API**
     
   Creates a new charge with the given data, stores the data in db and returns ID in response.
   Returns failure message if some error occurs.
   
-  >URL: *localhost:50051/chaipay/api/v1/create_charge
-  >BODY:
+  > URL: localhost:50051/chaipay/api/v1/create_charge
+  > METHOD: POST
+  > BODY:
 
   ```
     {
       "amount" : 300
     }
   ```
-  >RESPONSE:
+  > RESPONSE:
   ```
     {
       "id": "ch_1JGNCUSAauWGzIg361w30bR9",
@@ -64,15 +66,30 @@ This go app is build using gin framework and uses Stripes charge api
     }
   ```
 
-3. **POST Capture Charges API**
+3. **Capture Charges API**
 
   Captures a charge based on the id given in URL and updates the data in database
   
-  > URL: *localhost:50051/chaipay/api/v1/capture_charge/:chargeId
-  >RESPONSE:
+  > URL: localhost:50051/chaipay/api/v1/capture_charge/:chargeId
+  > METHOD: POST
+  > RESPONSE:
   ```
     {
       "status":  200,
-      "message": "Charge Captured Successfully",
-	  }
+      "message": "Charge Captured Successfully"
+    }
   ```
+4. **POST Create Refund API**
+
+  Creates a refund for the charge id given in URL and updates the data in database, also returns refund-id
+  
+  > URL: localhost:50051/chaipay/api/v1/create_refund/:chargeId
+  > METHOD: POST
+  > RESPONSE:
+  ```
+    {
+      "id": "re_1JGNCUSAauWGzIg361w30bR9",
+      "error": ""
+    }
+  ```
+
