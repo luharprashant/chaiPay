@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/luharprashant/chaiPay/controllers"
 	"context"
+	"github.com/luharprashant/chaiPay/controllers"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
@@ -12,7 +12,7 @@ import (
 
 func Connect() {
 	// Database Config
-	clientOptions := options.Client().ApplyURI("mongodb://localhost:@0.0.0.0:27017")
+	clientOptions := options.Client().ApplyURI("mongodb://myNormalUser:xyz123@localhost:27017/chaiPay")
 	client, err := mongo.NewClient(clientOptions)
 
 	//Set up a context required by mongo.Connect

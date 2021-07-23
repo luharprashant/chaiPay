@@ -1,6 +1,6 @@
 module github.com/luharprashant/chaiPay
 
-go 1.13
+go 1.15
 
 require (
 	github.com/DataDog/zstd v1.4.8 // indirect
@@ -9,6 +9,8 @@ require (
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
+	github.com/stripe/stripe-go v70.15.0+incompatible
+	github.com/stripe/stripe-go/v72 v72.58.0 // indirect
 	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/xdg/scram v1.0.3 // indirect
 	github.com/xdg/stringprep v1.0.3 // indirect

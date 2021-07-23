@@ -3,13 +3,16 @@ package routes
 import (
 	"net/http"
 
-	"github.com/luharprashant/chaiPay/controllers"
 	"github.com/gin-gonic/gin"
+	"github.com/luharprashant/chaiPay/controllers"
 )
 
 func Routes(router *gin.Engine) {
-	router.GET("/api/v1/", healthcheck)
-	router.GET("/api/v1/payments", controllers.GetAllPayments)
+	router.GET("/chaipay/api/v1/healthcheck", healthcheck)
+	router.GET("/chaipay/api/v1/get_charges", controllers.GetAllCharges)
+	router.POST("/chaipay/api/v1/create_charge", controllers.CreateCharge)
+	router.POST("/chaipay/api/v1/capture_charge/:chargeId", controllers.CaptureCharge)
+	router.POST("/chaipay/api/v1/create_refund/:chargeId", controllers.RefundCharge)
 	router.NoRoute(notFound)
 }
 
